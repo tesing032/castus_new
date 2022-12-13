@@ -131,6 +131,59 @@ class SettingsTableSeeder extends Seeder
                 'group'        => 'Admin',
             ])->save();
         }
+
+        $setting = $this->findSetting('site.header_image');
+        if (!$setting->exists) {
+            $setting->fill([
+                'display_name' => 'header_image',
+                'value'        => 'settings/November2022/JsBNLJW3G3wq1eKXy9Lt.png',
+                'details'      => '',
+                'type'         => 'image',
+                'order'        => 6,
+                'group'        => 'Site',
+            ])->save();
+        }
+
+        $setting = $this->findSetting('site.footer-second');
+        if (!$setting->exists) {
+            $setting->fill([
+                'display_name' => 'footer-second',
+                'value'        => '<div class="footer_item">
+<h3>A&eth;sto&eth;</h3>
+<ul>
+<li><a href="mailto:manar@manar.is">manar@manar.is</a></li>
+<li><a href="tel:5646005">5646005</a></li>
+</ul>
+</div>',
+                'details'      => '',
+                'type'         => 'rich_text_box',
+                'order'        => 7,
+                'group'        => 'Site',
+            ])->save();
+        }
+
+        $setting = $this->findSetting('site.footer-third');
+        if (!$setting->exists) {
+            $setting->fill([
+                'display_name' => 'footer-third',
+                'value'        => '<div class="footer_item">
+                <h3>Starfsst&ouml;&eth;</h3>
+                <ul>
+                <li>
+                <p>Gylfafl&ouml;t 17 112 Reykjav&iacute;k</p>
+                </li>
+                <li>
+                <p>Opnunart&iacute;mi <br>m&aacute;n-fim 9:00 - 16:00<br>f&ouml;s 9:00 - 12:00</p>
+                </li>
+                </ul>
+                </div>',
+                'details'      => '',
+                'type'         => 'rich_text_box 	',
+                'order'        => 8,
+                'group'        => 'Site',
+            ])->save();
+        }
+
     }
 
     /**

@@ -175,5 +175,197 @@ class MenuItemsTableSeeder extends Seeder
                 'order'      => 14,
             ])->save();
         }
+
+        $main_menu = Menu::where('name', 'main')->firstOrFail();
+        $main_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $main_menu->id,
+            'title'   => 'Heim',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$main_menuItem->exists) {
+            $main_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 1,
+            ])->save();
+        }
+        $main_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $main_menu->id,
+            'title'   => 'Þjónusta',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$main_menuItem->exists) {
+            $main_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 2,
+            ])->save();
+        }
+        $main_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $main_menu->id,
+            'title'   => 'Mottuhreinsun',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$main_menuItem->exists) {
+            $main_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => 15,
+                'order'      => 1,
+            ])->save();
+        }
+
+        $main_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $main_menu->id,
+            'title'   => 'Skilmálar',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$main_menuItem->exists) {
+            $main_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => 15,
+                'order'      => 2,
+            ])->save();
+        }
+
+        $main_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $main_menu->id,
+            'title'   => 'Teppahreinsun',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$main_menuItem->exists) {
+            $main_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => 15,
+                'order'      => 3,
+            ])->save();
+        }
+
+        $main_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $main_menu->id,
+            'title'   => 'Djúphreinsun',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$main_menuItem->exists) {
+            $main_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => 15,
+                'order'      => 4,
+            ])->save();
+        }
+
+        $main_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $main_menu->id,
+            'title'   => 'Vélaleiga',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$main_menuItem->exists) {
+            $main_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 10,
+            ])->save();
+        }
+
+        $main_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $main_menu->id,
+            'title'   => 'Um Castus',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$main_menuItem->exists) {
+            $main_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 11,
+            ])->save();
+        }
+
+        $footer_menu = Menu::where('name', 'footer')->firstOrFail();
+        $footer_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $footer_menu->id,
+            'title'   => 'Heim',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$footer_menuItem->exists) {
+            $footer_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 12,
+            ])->save();
+        }
+
+        $footer_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $footer_menu->id,
+            'title'   => 'Þjónusta',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$footer_menuItem->exists) {
+            $footer_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 13,
+            ])->save();
+        }
+
+        $footer_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $footer_menu->id,
+            'title'   => 'Mottuhreinsun',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$footer_menuItem->exists) {
+            $footer_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 14,
+            ])->save();
+        }
+
+        $footer_menuItem = MenuItem::firstOrNew([
+            'menu_id' => $footer_menu->id,
+            'title'   => 'Bílar',
+            'url'     => '',
+            'route'   => 'voyager.settings.index',
+        ]);
+        if (!$footer_menuItem->exists) {
+            $footer_menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 15,
+            ])->save();
+        }
     }
 }
