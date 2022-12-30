@@ -36,8 +36,7 @@ services:
             POSTGRES_PASSWORD: '${DB_PASSWORD:-secret}'
         volumes:
             - 'sail-pgsql:/var/lib/postgresql/data'
-            - "./vendor/laravel/sail/database/pgsql/create-testing-database.sql:/docker-entrypoint-initdb.d/10-create-testing-database.sql"
-        networks:
+            - './vendor/laravel/sail/database/pgsql/create-testing-database.sql:/docker-entrypoint-initdb.d/10-create-testing-database.sql'
         networks:
             - sail
         healthcheck:
@@ -56,15 +55,6 @@ services:
             test: ["CMD", "redis-cli", "ping"]
             retries: 3
             timeout: 5s
-    # pgadmin:
-    #     container_name: pgadmin4_container
-    #     image: dpage/pgadmin4
-    #     restart: always
-    #     environment:
-    #      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-    #      PGADMIN_DEFAULT_PASSWORD: root
-    #     ports:
-    #      - "5050:80"
     pgadmin:
       container_name: pgadmin_container
       image: dpage/pgadmin4
@@ -89,3 +79,4 @@ volumes:
     sail-redis:
         driver: local
     pgadmin:    
+
