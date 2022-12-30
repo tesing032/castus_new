@@ -303,7 +303,7 @@ class MenuItemsTableSeeder extends Seeder
             ])->save();
         }
 
-        $footer_menu = Menu::where('name', 'footer')->firstOrFail();
+        $footer_menu = Menu::where('name', 'Footer')->firstOrFail();
         $footer_menuItem = MenuItem::firstOrNew([
             'menu_id' => $footer_menu->id,
             'title'   => 'Heim',

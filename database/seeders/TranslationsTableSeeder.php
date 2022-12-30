@@ -118,7 +118,7 @@ class TranslationsTableSeeder extends Seeder
      */
     private function pagesTranslations()
     {
-        $page = Page::where('slug', 'hello-world')->firstOrFail();
+        $page = Page::where('slug', 'home')->firstOrFail();
         if ($page->exists) {
             $_arr = $this->arr(['pages', 'title'], $page->id);
             $this->trans('pt', $_arr, 'Olá Mundo');
